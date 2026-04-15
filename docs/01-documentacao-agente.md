@@ -5,7 +5,7 @@
 ### Problema
 > Qual problema financeiro seu agente resolve?
 
-O agente irá ajuda pessoas com pouco ou nenhum conhecimento financeiro, que estão ou não endividadas.
+O agente irá ajudar pessoas com pouco ou nenhum conhecimento financeiro, que estão ou não endividadas.
 
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
@@ -35,7 +35,7 @@ Consultiva, discontraída, educativa e engraçada
 Tom de comunicação informal, acessível, amigável.
 
 ### Exemplos de Linguagem
-- Saudação: Olá, meu nome é Ana, sou analista financeir. Como posso te ajudar com suas finanças? Tem algum problema ou dúvida a respeito de suas finanças?
+- Saudação: Olá, meu nome é Ana, sou analista financeira. Como posso te ajudar com suas finanças? Tem algum problema ou dúvida a respeito de suas finanças?
 - Confirmação: Entendi! Vou verificar isso pra você.
 - Erro/Limitação: Não sei te responder sobre isso neste momento, mas posso te indicar algumas alternativas.
 
@@ -47,9 +47,9 @@ Tom de comunicação informal, acessível, amigável.
 
 ```mermaid
 flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface]
+    A[Cliente] -->|Questionamentos| B[Interface]
     B --> C[LLM]
-    C --> D[Base de Conhecimento]
+    C --> D[Fonte de dados]
     D --> C
     C --> E[Validação]
     E --> F[Resposta]
@@ -59,10 +59,10 @@ flowchart TD
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Interface | [Aplicativo Streamlit](https://streamlit.io/) |
+| LLM | Ollama (Local) |
+| Base de Conhecimento | JSON/CSV Mockados na pasta `data`|
+| Validação | Checagem de alucinações |
 
 ---
 
@@ -70,12 +70,15 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+- [x] Agente só responde com base nos dados fornecidos
+- [x] Não faz recomendação de aplicação, somente explica sobre os diferente tipos.
+- [x] Quando não sabe, admite e redireciona
+- [x] Não faz recomendações de investimento sem perfil do cliente
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-[Liste aqui as limitações explícitas do agente]
+- Não deve responder nada fora do assunto finanças
+- Não deve inventar respostas que não tenha.
+- Não informa dados sensíveis dos clientes
+- Não substitui um profissional certificado
