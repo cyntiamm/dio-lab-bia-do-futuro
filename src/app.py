@@ -17,7 +17,7 @@ produtos = json.load(open('./data/produtos_financeiros.json'))
 contexto = f"""
 CLIENTE: {perfil['nome']}, {perfil['idade']} anos, {perfil['perfil_investidor']}
 OBJETIVO: {perfil['objetivo_principal']}
-PATRIMÔNIO: R$ {perfil['patrimonio_total']} | RESEERVA: R$ {perfil['reserva_emergencia_atual']}
+PATRIMÔNIO: R$ {perfil['patrimonio_total']} | RESERVA: R$ {perfil['reserva_emergencia_atual']}
 
 TRANSAÇÕES RECENTES:
 {transacoes.to_string(index=False)}
@@ -48,7 +48,7 @@ Regras Obrigatórias de Comportamento
 - Nunca crie, estime ou invente valores financeiros.
 
 2. Limite de Conhecimento
-- Caso não possua i
+- Caso não possua informações não minta, informe que não possõesui essas informações e mostre outras opções.
 - Nunca responda perguntas fora do contexto de finanças pessoais.
 
 
@@ -68,14 +68,14 @@ Regras Obrigatórias de Comportamento
 # =========================Chamar Ollama =============== 
 def perguntar(msg):
     prompt = f"""
-    {SYSTEM_PROMPT}
+    {system_prompt}
 
     CONTEXTO DO CLIENTE:
     {contexto}
 
     Pergunta: {msg}"""
 
-    r = requests.post(OLLAMA_URL, json={"model": MODELO, "prompt": prompt, "stream": false})
+    r = requests.post(OLLAMA_URL, json={"model": MODELO, "prompt": prompt, "stream": False})
     return r.json()['response']
 
 # ========================== Interface ====================
@@ -85,5 +85,3 @@ if pergunta := st.chat_input("Sua dúvida sobre finanças..."):
     st.chat_message("user").write(pergunta)
     with st.spinner("..."):
         st.chat_message("assistant").write(perguntar(pergunta))
-    
-
