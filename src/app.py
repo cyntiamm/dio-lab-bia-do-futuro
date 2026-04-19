@@ -1,7 +1,7 @@
 import json
-import streamlit as st
 import pandas as pd
 import requests
+import streamlit as st
 
 # ================  CONFIGURAÇÃO =================
 OLLAMA_URL = "http://localhost:11434/api/generate"
@@ -75,15 +75,15 @@ def perguntar(msg):
 
     Pergunta: {msg}"""
 
-    r = requests.post(OLLAMA_URL, json={"model": MODELO, "prompt": prompt."stream": false})
+    r = requests.post(OLLAMA_URL, json={"model": MODELO, "prompt": prompt, "stream": false})
     return r.json()['response']
 
 # ========================== Interface ====================
 st.title(" Ana, Sua Analista Financeira")
 
-if pergunta := st.chat_input("Sua dúvida sobre financças..."):
+if pergunta := st.chat_input("Sua dúvida sobre finanças..."):
     st.chat_message("user").write(pergunta)
     with st.spinner("..."):
-        st.chat_message("assistant").write(perguntar(pergunta)) import st
+        st.chat_message("assistant").write(perguntar(pergunta))
     
 
