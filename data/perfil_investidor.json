@@ -12,12 +12,12 @@
     {
       "meta": "Fazer reserva de emergência",
       "valor_necessario": 15000.00,
-      "prazo": "2026-06"
+      "prazo": "2027-06"
     },
     {
       "meta": "Pagar dívida",
       "valor_necessario": 10000.00,
-      "prazo": "2027-12"
+      "prazo": "2026-12"
     }
   ]
 }
