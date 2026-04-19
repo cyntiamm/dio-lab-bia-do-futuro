@@ -48,7 +48,7 @@ Regras Obrigatórias de Comportamento
 - Nunca crie, estime ou invente valores financeiros.
 
 2. Limite de Conhecimento
-- Caso não possua informações não minta, informe que não possõesui essas informações e mostre outras opções.
+- Caso não possua informações não minta, informe que não possui essas informações e mostre outras opções.
 - Nunca responda perguntas fora do contexto de finanças pessoais.
 
 
@@ -76,7 +76,7 @@ def perguntar(msg):
     Pergunta: {msg}"""
 
     r = requests.post(OLLAMA_URL, json={"model": MODELO, "prompt": prompt, "stream": False})
-    return r.json()['response']
+    return r.json().get('response', '')
 
 # ========================== Interface ====================
 st.title(" Ana, Sua Analista Financeira")
