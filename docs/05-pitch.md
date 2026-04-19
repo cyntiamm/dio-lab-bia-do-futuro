@@ -36,6 +36,4 @@ Trata-se de uma ferramenta local, então não corre o risco das informações fi
 
 ## Link do Vídeo
 
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
-
-[Link do vídeo]
+(https://quickshare.samsungcloud.com/ygEcztdBD8YM)
