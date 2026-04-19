@@ -23,7 +23,7 @@ requests
 
 ```bash
 # Instalar dependências
-pip install stremlit pandas requests
+pip install streamlit pandas requests
 
 # Rodar a aplicação
 python -m streamlit run src/app.py
